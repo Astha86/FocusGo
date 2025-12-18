@@ -34,7 +34,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
 		mutationKey:["deleteTodo"],
 		mutationFn: async () => {
 			try{
-				const res = await fetch(BASE_URL + `/todos/${todo._id}`, {
+				const res = await fetch(`${BASE_URL}/todos/${todo._id}`, {
 					method: "DELETE",
 				});
 				const data = await res.json();
@@ -63,7 +63,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
 				justifyContent={"space-between"}
 			>
 				<Text
-					color={todo.completed ? "green.200" : "yellow.100"}
+					color={todo.completed ? "green.300" : "yellow.500"}
 					textDecoration={todo.completed ? "line-through" : "none"}
 				>
 					{todo.body}
